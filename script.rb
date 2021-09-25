@@ -34,7 +34,7 @@ def make_call(url, method, type, update_amount="")
   https.request(request)
 end
 
-response = make_call(DROPBOX_URL, "post", "dropbox")
+response = make_call("https://content.dropboxapi.com/2/files/download", "post", "dropbox")
 csv =  response.read_body
 days = CSV.parse(csv, headers: true)
 streak = 0
